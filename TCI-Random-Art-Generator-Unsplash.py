@@ -22,6 +22,8 @@ Requirements:
 
 Directoryes for Output Files und oginal Files
 
+unsplash API Key 
+
 imageMagick min. 7.0.xxx
 https://imagemagick.org/
 
@@ -39,7 +41,7 @@ from wand.image import Image, COMPOSITE_OPERATORS
 from wand.drawing import Drawing
 
 # unsplash URL 
-url = "https://api.unsplash.com/photos/random/?client_id=G7o91KD0qroulewCBGB5NRvyoKW-L_TOaiikOgoS7S8"
+url = "https://api.unsplash.com/photos/random/?client_id=xxxxxxx your Key xxxxxxx"
 
 # set directorys, put source images in input dir
 # input_dir = ("input/")
@@ -71,19 +73,14 @@ operators = ( 'plus',
 def draw_img(operators, background_img, overlay_img):
 
     oper = random.choice(operators)  
-#    print ("Operator: ",  oper)
     
     bg_img = background_img.clone()
     ov_img = overlay_img.clone()
     
-#    print ("Backgroundsize: ", bg_img.width, bg_img.height )
-#    print ("Overlay Size: ", ov_img.width, ov_img.height )
 
     left_offset = random.randrange(0, bg_img.width - ov_img.width)
-#    print("Offset left:", left_offset, left_offset + ov_img.width)
     
     top_offset = random.randrange(0, bg_img.height - ov_img.height)
-#    print("Offset height:",top_offset, top_offset + ov_img.height)
 
     with Drawing() as draw:
         draw.composite(operator=oper, left=left_offset, top=top_offset, width=ov_img.width, height=ov_img.height, image=ov_img)
@@ -93,7 +90,6 @@ def draw_img(operators, background_img, overlay_img):
     
 def linkFetch(url, photo_metadata):
    
-    # url = "https://api.unsplash.com/photos/random/?client_id=G7o91KD0qroulewCBGB5NRvyoKW-L_TOaiikOgoS7S8"
     response = requests.get(url)
     raw_url  = response.json()["urls"]["raw"] # URL for raw image on unsplash
     
