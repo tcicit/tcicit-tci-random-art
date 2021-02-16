@@ -13,10 +13,11 @@ You need an API key from unsplash, which you can get for free.
 Autor: Thomas Cigolla, 16.02.2021
 Version: 1.0
 
-Mögliche Erweiterungen:
+Possible extensions
 
-- Setzen von EXIF Daten 
-- Lesen von Bildern aus einem lokal Verzeichnis
+- Set EXIF data for image information
+- Read input images from local filesystem
+
 ---------------------------------------------------------------
 Requirements: 
 
