@@ -20,6 +20,8 @@ Version: 1.0
 
 Directoryes for Output Files und orginal Files
 
+unsplash API Key
+
 imageMagick min. 7.0.xxx
 https://imagemagick.org/
 
